@@ -2,7 +2,7 @@ name: CI commit and push
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   commit:
-    - master
+    branches: ["master"]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
