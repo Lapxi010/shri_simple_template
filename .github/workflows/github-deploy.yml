@@ -1,14 +1,10 @@
-name: CI commit and push
+name: deploy page
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
-    branches-ignore:
-      - 'main'
-      - 'gh-pages'
+    branches: ["master"]
   pull_request:
-    branches-ignore:
-      - 'main'
-      - 'gh-pages'
+    branches: ["master"]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -27,3 +23,4 @@ jobs:
       - run: npm run build
       - run: npm run analyze
       - run: npm run validate
+      - run: npm run deploy
