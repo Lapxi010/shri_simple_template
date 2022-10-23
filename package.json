@@ -29,6 +29,11 @@
         "validate": "node_modules/.bin/statoscope validate -i stats.json --config=./statoscope.config.js",
         "deploy": "gh-pages -d dist"
     },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint:js && npm run lint:css && npm run build"
+        }
+    },
     "devDependencies": {
         "@babel/core": "^7.19.3",
         "@babel/preset-env": "^7.19.3",
@@ -48,6 +53,7 @@
         "eslint-plugin-react": "^7.31.10",
         "eslint-plugin-react-hooks": "^4.6.0",
         "html-webpack-plugin": "^5.5.0",
+        "husky": "^8.0.1",
         "style-loader": "^3.3.1",
         "stylelint": "^14.14.0",
         "stylelint-config-standard": "^29.0.0",
