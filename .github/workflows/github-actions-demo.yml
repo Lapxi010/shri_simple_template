@@ -1,21 +1,22 @@
 name: CI commit and push
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
-  push:
-    - master
-  pull_request:
+  commit:
     - master
 jobs:
-  Commit:
-    run:
-    - npm install
-    - npm run lint:js
-    - npm run lint:css
-    - npm run build
-    - npm run analyze
-  Merge:
-    run:
-    - npm install
-    - npm run build
-    - npm run deploy
-
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: npm
+      - run: npm ci
+      - run: npm run lint:js
+      - run: npm run lint:css
+      - run: npm run build
