@@ -18,6 +18,7 @@ jobs:
         with:
           node-version: 16.x
           cache: npm
+      - run: npm run ci
       - run: npm run lint:js
       - run: npm run lint:css
       - run: npm run build
