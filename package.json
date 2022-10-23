@@ -29,11 +29,6 @@
         "validate": "node_modules/.bin/statoscope validate -i stats.json --config=./statoscope.config.js",
         "deploy": "gh-pages -d dist"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run lint:js && npm run lint:css && npm run build"
-        }
-    },
     "devDependencies": {
         "@babel/core": "^7.19.3",
         "@babel/preset-env": "^7.19.3",
@@ -60,5 +55,10 @@
         "webpack": "^5.74.0",
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^3.11.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint:js && npm run lint:css && npm run build"
+        }
     }
 }
