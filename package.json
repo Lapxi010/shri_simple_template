@@ -28,7 +28,6 @@
         "analyze": "webpack --json stats.json",
         "validate": "node_modules/.bin/statoscope validate -i stats.json --config=./statoscope.config.js",
         "deploy": "gh-pages -d dist",
-        "prepare": "husky install"
     },
     "devDependencies": {
         "@babel/core": "^7.19.3",
